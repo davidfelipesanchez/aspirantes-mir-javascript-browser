@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(179, 177, 177);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .todo-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+   
+  .todo-input-container {
+    position: relative;
+    display: inline-block;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    box-sizing: border-box;
+    margin-bottom: 10px;}
+  
+  .todo-input {
+    padding: 10px;
+    padding-right: 40px; /* Ajustar el espacio para el botón */
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    
+    
+  }
+  .fondo [type="checkbox"]+label{
+    
+    font-weight: bold;
+    line-height: 3em;
+    color: #3f3dcf;
+    cursor: pointer;
+    
+   
+
+  }
+  .todo-container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 26px;
+    height: 26px;
+    border: 4px solid #25c8f1;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    vertical-align: middle;
+  }
+  .todo-button {
+    padding: 12px 13px;
+    background-color: #c950a4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .todo-container [type="button"]{
+    padding: 12px 13px;
+    background-color: #25c8f1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    
+    
+  }
+  .fondo{
+    background-color: aliceblue;
+    position: relative;
+    display: inline-block;
+    
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 70%;
+  }
+  
+  .todo-button:hover {
+    background-color: #c950a4;
+  }
+  
+  .todo-button:focus {
+    outline: none;
+  }
+  
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .todo-item label {
+    margin-left: 10px;
+  }
+  
+  .is-completed label {
+    text-decoration: line-through;
+    color: #25c8f1;
+  }
+  
+  .delete-button {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+ 
