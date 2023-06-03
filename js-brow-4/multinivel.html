@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multinivel</title>
+
+</head>
+<body>
+  <h1>Multinivel</h1>
+
+  <div id="menuContainer"></div>
+
+  <script >
+   const menu = [
+  {
+    name: 'Home',
+    link: '/',
+    items: []
+  },
+  {
+    name: 'About',
+    link: '/about',
+    items: []
+  },
+  {
+    name: 'Products',
+    link: '/products',
+    items: [
+      {
+        name: 'Product 1',
+        link: '/products/1',
+        items: []
+      },
+      {
+        name: 'Product 2',
+        link: '/products/2',
+        items: [
+          {
+            name: 'Product 2.1',
+            link: '/products/2/1',
+            items: []
+          },
+        ]
+      },
+    ]
+  },
+  {
+    name: 'Services',
+    link: '/services',
+    items: [
+      {
+        name: 'Service 1',
+        link: '/services/1',
+        items: [
+          {
+            name: 'Service 1.1',
+            link: '/services/1/1',
+            items: []
+          },
+        ]
+      },
+      {
+        name: 'Service 2',
+        link: '/services/2',
+        items: [
+          {
+            name: 'Service 2.1',
+            link: '/services/2/1',
+            items: []
+          },
+          {
+            name: 'Service 2.2',
+            link: '/services/2/2',
+            items: []
+          },
+        ]
+      },
+    ]
+  },
+]
+
+function createMenu(menuData, parentElement) { // Crea un elemento ul en el DOM que servirá como contenedor
+    const ul = document.createElement('ul');      //principal del menú.
+  ul.classList.add('menu');
+
+  menuData.forEach(item => { //Recorre la estructura de datos menu utilizando un bucle for , forEach o map. Por cada elemento en menu:
+    const li = document.createElement('li'); //Crea un elemento li y agrega el nombre del elemento como texto dentro del li.
+    li.textContent = item.name;
+
+    if (item.items.length > 0) { //Si el elemento tiene elementos hijos (es decir, si la propiedad items no está vacía),
+      createMenu(item.items, li); // crea un submenú siguiendo los mismos pasos anteriores.
+    }
+
+    ul.appendChild(li); // Agrega el elemento li al contenedor ul creado en el paso 1.
+  });
+
+  parentElement.appendChild(ul); 
+}
+
+const menuContainer = document.getElementById('menuContainer');
+const mainMenu = document.createElement('ul');
+mainMenu.classList.add('menu');// Agrega el contenedor ul al DOM, dentro del elemento que deseas que contenga el menú.
+createMenu(menu, mainMenu);
+menuContainer.appendChild(mainMenu);
+  </script>
+</body>
+</html>
